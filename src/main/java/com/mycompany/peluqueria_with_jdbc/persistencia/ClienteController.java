@@ -1,5 +1,6 @@
 package com.mycompany.peluqueria_with_jdbc.persistencia;
 
+import com.mycompany.peluqueria_with_jdbc.Peluqueria_with_jdbc;
 import com.mycompany.peluqueria_with_jdbc.logica.Cliente;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -37,9 +38,9 @@ public class ClienteController {
         } catch (FileNotFoundException ex) { // Captura específica para FileNotFoundException
             // Si el archivo properties NO se encuentra, se usan valores por defecto
             System.out.println("Archivo properties no encontrado. Usando valores por defecto.");
-            String defaultUrl = "jdbc:mysql://localhost:3306/siac";
-            String defaultUser = "root";
-            String defaultPassword = "";
+            String defaultUrl = Peluqueria_with_jdbc.URL;
+            String defaultUser = Peluqueria_with_jdbc.USER;
+            String defaultPassword = Peluqueria_with_jdbc.PASSWORD;
 
             System.out.println("Conexión Exitosa. con valores por defecto");
             // Retorna una conexión

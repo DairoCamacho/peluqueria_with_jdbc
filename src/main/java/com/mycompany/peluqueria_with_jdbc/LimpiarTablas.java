@@ -14,7 +14,7 @@ public class LimpiarTablas {
     public static void main(String[] args) {
         limpiar();
     }
-
+  
   private static Connection newConnection() throws SQLException {
 
     Properties properties = new Properties();
@@ -26,13 +26,10 @@ public class LimpiarTablas {
       // entonces crea valores por defecto
       if (inputStream == null) {
         System.out.println("Archivo properties no encontrado. Usando valores por defecto.");
-        String defaultUrl = "jdbc:mysql://localhost:3306/siac";
-        String defaultUser = "root";
-        String defaultPassword = "";
 
         System.out.println("Conexión Exitosa, con valores por defecto");
         // Retorna una conexión
-        return DriverManager.getConnection(defaultUrl, defaultUser, defaultPassword);
+        return DriverManager.getConnection(Peluqueria_with_jdbc.URL, Peluqueria_with_jdbc.USER, Peluqueria_with_jdbc.PASSWORD); 
         // OJO: getConnection() genera IOExceptionse, pero se pasa al siguiente metodo para su manejo
       }
 
